@@ -26,7 +26,7 @@ class Main extends Sprite
 	private function init(e) 
 	{
 		//Create an Admob account, click add app to site. Then click manage after creating to see publisher id.
-		AD.showAd("INSERT_PUBLISHER_ID", -1, -1, 0);
+		AD.showAd("REPLACE_WITH_PUBLISHER_ID", -1, -1, 0);
 	}
 	
 

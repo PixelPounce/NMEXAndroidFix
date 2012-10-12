@@ -86,7 +86,7 @@ public class AdActivity extends org.haxe.nme.GameActivity implements AdListener 
 			public void run() {
 				
 			String adID = id;
-			adView = new AdView(activity, AdSize.BANNER, adID);
+			adView = new AdView(activity, AdSize.SMART_BANNER, adID);
 			adView.setAdListener(getInstance());
 
 			AdRequest request = new AdRequest();
@@ -94,9 +94,11 @@ public class AdActivity extends org.haxe.nme.GameActivity implements AdListener 
 			//You can find your device ID by running logcat and examining the output.
 			//So, open a command prompt and change to your AndroidSDK platform tools directory and run
 			//"adb logcat > logcat.txt". When you close the command prompt you will find the txt file containing the device ID in the same directory
-			request.addTestDevice("INSERT_DEVICE_ID");
+			//Then replace AdRequest.TEST_EMULATOR with your device id.
+			request.addTestDevice(AdRequest.TEST_EMULATOR);
 
-			adView.loadAd(request);	
+			//Uncomment this after adding test device.
+			//adView.loadAd(request);	
 
 			adWhirlLayoutParams = new RelativeLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT); 
 				 
