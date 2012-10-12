@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	<!-- metadata, make sure 'package' is at least 2 segments (ie. com.myproject) -->
+	<app file="NME Android ads" title="NME Android ads" main="com.pixelpounce.ads.Main" package="com.pixelpounce.ads" 
+		version="1.0.0" company="Pixel Pounce Pty Ltd" />
+		
+	<!-- output -->
+	<window width="800" height="600" fps="60" background="0xFFFFFF" orientation="landscape" resizable="false" />
+	<set name="BUILD_DIR" value="bin" />
+	
+	<!-- classpath, haxe libs -->
+	<classpath name="src" />
+	<classpath name="Android/libs"/>
+	<haxelib name="nme" />
+	
+	<!-- assets -->
+	<!--<icon name="assets/nme.svg" />-->
+	<assets path="assets" include="*" exclude="nme.svg" />
+<!--	<assets path="assets" include="*" exclude="nme.svg" />-->                        
+	
+	<!-- DLLs -->
+	<ndll name="std" />
+	<ndll name="regexp" />
+	<ndll name="zlib" />
+	<ndll name="nme" haxelib="nme" />
+	<set name="SWF_VERSION" value="10.1" />
+	<template path="Android/libs" rename="libs"/>
+	<template path="AndroidManifest.xml" if="android" />
+	<template path="MainActivity.java" rename="src/com/pixelpounce/ads/MainActivity.java" if="android" />
+	<java path="src/java"/>
+	
+	
+	<!-- Windows app: hide console -->
+	<!--<setenv name="no_console" value="1" />-->
+</project>
