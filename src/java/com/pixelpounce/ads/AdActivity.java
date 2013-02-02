@@ -120,6 +120,7 @@ public class AdActivity extends org.haxe.nme.GameActivity implements AdListener 
 				
 				adInited = true;
 				mAdLayout.addView(adView, adWhirlLayoutParams);
+				adHidden = false;
 			}
 			
 			
